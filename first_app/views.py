@@ -4,10 +4,6 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("<h1>This is home page</h1> <br><a href='contact/'> Contact</a> <br><a href='about/'> About</a>")
+    diction ={'name':"Comilla Victoria Govt College"}
 
-def contact(request):
-    return HttpResponse("<h1>This is contact page</h1> <br><a href='/'> Home</a> <br><a href='/first_app/about/'> About</a>")
-
-def about(request):
-    return HttpResponse("<h1>This is about page</h1> <br><a href='/first_app/contact/'> Contact</a> <br><a href='/'> Home</a>")
+    return render(request, 'first_app/index.html', context=diction)
