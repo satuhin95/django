@@ -7,7 +7,7 @@ def home(request):
     return HttpResponse("<h1>This is home page</h1> <br><a href='contact/'> Contact</a> <br><a href='about/'> About</a>")
 
 def contact(request):
-    return HttpResponse("<h1>This is contact page</h1> <br><a href='/'> Home</a> <br><a href='/about/'> About</a>")
+    return HttpResponse("<h1>This is contact page</h1> <br><a href='/'> Home</a> <br><a href='/first_app/about/'> About</a>")
 
 def about(request):
-    return HttpResponse("<h1>This is about page</h1> <br><a href='/contact/'> Contact</a> <br><a href='/'> Home</a>")
+    return HttpResponse("<h1>This is about page</h1> <br><a href='/first_app/contact/'> Contact</a> <br><a href='/'> Home</a>")
