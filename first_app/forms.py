@@ -10,3 +10,14 @@ class MusicianForm(forms.ModelForm):
         # exclude = ['first_name']
         # fields= ('first_name','last_name',)
 
+class AlbumForm(forms.ModelForm):
+    # release_date = forms.DateField(widget=forms.TextInput(attrs={'type':'date'}))
+    class Meta:
+        model = Album
+        fields= "__all__"
+        widgets = {
+            'release_date': forms.DateInput(
+                attrs={'type': 'date', 'placeholder': 'yyyy-mm-dd (DOB)', 'class': 'form-control', 'style':'width:30%'}
+            )
+        }
+

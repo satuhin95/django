@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends 'first_app/layout.html' %}
 {% block content %}
-    <h2>Musician List</h2>
+
     <table class="table table-striped" >
         <thead>
             <tr>
@@ -11,11 +11,11 @@
             </tr>
         </thead>
         <tbody>
-            {% for musicion in musicions %}
+            {% for album in albums %}
             <tr>
-                <td>{{musicion.first_name}}</td>
-                <td>{{musicion.last_name}}</td>
-                <td>{{musicion.instrument}}</td>
+                <td>{{album.name}}</td>
+                <td>{{album.release_date}}</td>
+                <td>{{album.num_stars}}</td>
             </tr>
             {% endfor %}
         </tbody>
