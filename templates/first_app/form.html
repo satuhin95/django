@@ -11,15 +11,11 @@
     <form action="" method="POST">
         {{test_form.as_p}}
         {% csrf_token %}
+
         <input type="submit" name="submit"/>
     </form>
     <hr>
-    {% if form_submited %}
-        <p>{{char_field}}</p>
-        <p>{{choiec_field}}</p>
-        <p>{{mulchoiec_field}}</p>
-
-    {% endif  %}
+  
     
 </body>
 </html>
