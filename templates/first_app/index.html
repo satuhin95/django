@@ -1,18 +1,10 @@
 <!DOCTYPE html>
-{% load static  %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <!-- <h1>This is the Home Page</h1>
-    <h2>{{name}}</h2>
-    <img src="{% static 'images/saif.jpg' %}" /> -->
-        <a href="{% url 'first_app:form' %}">Add New</a>
-    <table>
+{% extends 'first_app/layout.html' %}
+{% load my_filters %}
+{% block content %}
+    <h1>{{name | upper | custom_filter:" Saif"}}</h1>
+
+    <table class="table table-striped" style="width:50%">
         <thead>
             <tr>
                 <th>First Name</th>
@@ -31,5 +23,4 @@
         </tbody>
     </table>
     
-</body>
-</html>
+{% endblock %}
