@@ -7,4 +7,6 @@ class MusicianForm(forms.ModelForm):
     class Meta:
         model = Musician
         fields= "__all__"
+        # exclude = ['first_name']
+        # fields= ('first_name','last_name',)
 
