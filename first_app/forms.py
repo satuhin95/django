@@ -1,7 +1,10 @@
 from django import forms
 
 class user_form(forms.Form):
-    user_name = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder':"Enter Your Name",'style':"width:150px"}))
-    user_email = forms.EmailField(label='User Email',widget=forms.TextInput(attrs={'placeholder':"Enter Your Email"}))
-    user_dob = forms.DateField(label='Date of Birth', widget=forms.TextInput(attrs={'type':'date'}))
-    
+    boolear_field = forms.BooleanField(required=False)
+    char_field = forms.CharField(max_length=15, min_length=5)
+    choices=(('','Select'),('1','First'),('2','Second'))
+    choiec_field = forms.ChoiceField(choices=choices , required=False)
+    radio = (('A','A'),('B','B'))
+    radio_field = forms.ChoiceField(choices=radio,widget=forms.RadioSelect)
+    mulchoiec_field = forms.MultipleChoiceField(choices=choices , required=False)
