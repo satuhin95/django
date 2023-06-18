@@ -8,10 +8,17 @@
 <body>
 
     <h4>{{heading_1}}</h4>
-    <form action="" method="post">
+    <form action="" method="POST">
         {{test_form.as_p}}
+        {% csrf_token %}
         <input type="submit" name="submit"/>
     </form>
+    <hr>
+    {% if form_submited %}
+        <p>{{user_name}}</p>
+        <p>{{user_email}}</p>
+        <p>{{user_dob}}</p>
+    {% endif  %}
     
 </body>
 </html>
