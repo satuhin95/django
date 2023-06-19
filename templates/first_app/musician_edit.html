@@ -1,0 +1,12 @@
+{% extends 'first_app/layout.html' %}
+{% block content %}
+
+
+    <h4>{{title}}</h4>
+    <form action="" method="POST">
+       {{edit_form.as_p}}
+        {% csrf_token %} 
+
+        <input class="btn btn-primary btn-sm" type="submit" value="Update" name="submit"/>
+    </form>
+{% endblock %}

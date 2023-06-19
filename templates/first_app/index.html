@@ -8,6 +8,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Instrument Name</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,11 @@
                 <td>{{musicion.first_name}}</td>
                 <td>{{musicion.last_name}}</td>
                 <td>{{musicion.instrument}}</td>
+                <td>
+                    <a href="{% url 'first_app:musician_details' id=musicion.id %}" class="btn btn-success btn-small">Details</a>
+                    <a href="{% url 'first_app:musician_edit' id=musicion.id %}" class="btn btn-primary btn-small">Edit</a>
+                    <a href="{% url 'first_app:musician_delete' id=musicion.id %}" onClick="return confirm('Are you want to Delete it!')" class="btn btn-danger btn-small">Delete</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

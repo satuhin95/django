@@ -1,0 +1,14 @@
+{% extends 'first_app/layout.html' %}
+{% block content %}
+   <h4>{{title}}</h4>
+    {% if message %}
+    <div class="alert alert-success">{{message}}</div>
+    {% endif %}
+
+    <form action="" method="POST">
+        {{album_form.as_p}}
+        {% csrf_token %}
+
+        <input class="btn btn-primary btn-sm" type="submit" name="submit" value="Update"/>
+    </form>
+{% endblock %}
