@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Template</h1>
-    <h1>{{name}}</h1>
-</body>
-</html>
+{% extends 'first_app/layout.html' %}
+{% block content %}
+   <h1>Template</h1>
+   <table class="table table-striped">
+      <thead>
+         <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Instrument</th>
+            <th>Action</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for musician in musician_list %}
+         <tr>
+            <td>{{musician.first_name}}</td>
+            <td>{{musician.last_name}}</td>
+            <td>{{musician.instrument}}</td>
+            <td>
+             <a class="btn btn-primary" href="{% url 'first_app:musician_details' pk=musician.pk %}">Details</a>
+             <a class="btn btn-success" href="{% url 'first_app:musician_update' pk=musician.pk %}">Edit</a>
+             <a class="btn btn-danger" href="{% url 'first_app:musician_delete' pk=musician.pk %}">Delete</a>
+            </td>
+            </tr>
+      {% endfor %} 
+      </tbody>
+   </table> 
+   
+
+{% endblock  %}   
+
+

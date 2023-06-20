@@ -2,9 +2,9 @@
 {% block content %}
 
 <h3>Musician Details</h3>
-<h4>Musician Name : {{musicion.first_name}} {{musicion.last_name}}</h4>
-<h4>Instrument : {{musicion.instrument}}</h4>
-<h4>Rating : {{artist_reating.avg}}</h4>
+<h4>Musician Name : {{musician.first_name}} {{musician.last_name}}</h4>
+<h4>Instrument : {{musician.instrument}}</h4>
+
 
 <h5>Album List</h5>
 
@@ -19,7 +19,7 @@
         </thead>
         <tbody>
 
-        {% for album in albums %}
+        {% for album in musician.album_list.all %}
             <tr>
                 <td>{{album.name}}</td>
                 <td>{{album.release_date|date:"M d, Y"}}</td>

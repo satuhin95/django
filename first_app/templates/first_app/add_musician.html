@@ -1,12 +1,11 @@
 {% extends 'first_app/layout.html' %}
 {% block content %}
 
-
-    <h4>{{title}}</h4>
+    <h2>Create musician</h2>
     <form action="" method="POST">
-        {{musician_form.as_p}}
+        {{form.as_p}}
         {% csrf_token %}
 
-        <input class="btn btn-primary btn-sm" type="submit" name="submit"/>
+        <input class="btn btn-primary btn-sm" value="Create" type="submit" name="submit"/>
     </form>
 {% endblock %}

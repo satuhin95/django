@@ -1,0 +1,11 @@
+{% extends 'first_app/layout.html' %}
+{% block content %}
+
+    <h4>Musician Delete</h4>
+    <form action="" method="POST">
+
+        {% csrf_token %} 
+
+        <input class="btn btn-danger btn-sm" type="submit" value="Delete" name="submit"/>
+    </form>
+{% endblock %}
