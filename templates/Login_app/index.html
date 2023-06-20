@@ -1,4 +1,15 @@
 {% extends 'Login_app/base.html' %} 
+
 {% block contain %}
 <h1>Index Page</h1>
+{% if user.is_authenticated %}
+    <h4>Username : {{user_info.username}}</h4>
+    <h4>Email : {{user_info.email}}</h4>
+    <h4>Facebook :<a href="{{user_more_info.facebook_id}}" target="_blank">Facebook ID</a> </h4>
+  <img src="/media/{{  user_more_info.profile_pic }}"/>
+ 
+    </div>
+{% else %}
+<div class="alert alert-danger">You are not logged In!</div>
+{% endif %}
 {% endblock  %}

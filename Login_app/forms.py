@@ -12,3 +12,5 @@ class UserInfoForm(forms.ModelForm):
     class Meta():
         model = UserInfo
         fields = ('facebook_id','profile_pic')
+
+        
