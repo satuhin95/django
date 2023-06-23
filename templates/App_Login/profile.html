@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Profile{% endblock  %}
+{% block contant %}
+<h2>Your Profile</h2>
+{% if user.user_profile %}
+    <img class="rounded-circle" src="/media/{{user.user_profile.profile_pic}}"  alt="pic" style="width:100px"/>
+    <br/><a href="{% url 'App_Login:change_profile_pic' %}" alt="Img" class="btn btn-sm btn-primary "> Change profile</a>
+
+    {% else %}
+    <img class="rounded-circle" src="/media/profile_pics/profile.jpg"  alt="pic" style="width:100px"/>
+    <br/><a href="{% url 'App_Login:profile_change' %}" alt="Img" class="btn btn-sm btn-info "> Change profile</a>
+{% endif %}
+<p>Name: {{user.first_name}} {{user.last_name}} </p>
+<p>Username:  {{user.username}}</p>
+<p>Email:  {{user.email}}</p>
+<hr>
+<a href="{% url 'App_Login:user_change'%}">Change profile</a>
+
+{% endblock  %}

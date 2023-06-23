@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block title %} Profile{% endblock  %}
+{% block contant %}
+<h2>Change Profile</h2>
+<form method="POST">
+    {{form.as_p  }}
+    {% csrf_token %}
+    <input type="submit" name="submit" value="Change" class="btn btn-primary btn-sm" />
+</form>
+
+{% endblock  %}

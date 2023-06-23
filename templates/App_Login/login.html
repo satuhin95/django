@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}Sign Up{% endblock  %}
+
+{% block contant %}
+
+<h2>Login Form</h2>
+<form method="POST">
+    {{form.as_p  }}
+    {% csrf_token %}
+    <input type="submit" name="submit" value="Login" class="btn btn-primary btn-sm" />
+</form>
+<br>
+<p>Create New Account? <a href="{% url 'App_Login:sign_up' %}" class="btn btn-sm btn-success">SignUp</a> </p>
+
+{% endblock  %}
