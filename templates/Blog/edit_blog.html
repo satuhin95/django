@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block title %} Edit {{blog.title}}{% endblock  %}
+{% block contant %}
+<h1>Blog Edit</h1>
+{% if blog.author == user %}
+<form method="POST"  enctype="multipart/form-data">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input class="btn btn-success" name="submit" value="Edit"  type="submit"/>
+</form>
+
+{% endif %}
+
+{% endblock  %}

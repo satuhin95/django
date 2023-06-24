@@ -1,9 +1,10 @@
 {% extends 'layout.html' %}
 {% load custom_filters %} 
-{% block title %}Home{% endblock  %}
+{% block title %}{{user}} Blogs{% endblock  %}
 {% block contant %}
-{% for blog in blogs %}
-<h3>{{blog.blog_title}}</h3>
+<h1>My Blog </h1>
+    {% for blog in user.post_author.all %}
+    <h3>{{blog.blog_title}}</h3>
 <h6>{{blog.publish_date}}</h6>
 <div class="row">
     <div class="col-md-4">
@@ -15,12 +16,12 @@
             <a href="">{{blog.author | upper}}</a>
         </h6>
         <a href="{% url 'Blog:blog_details' slug=blog.slug %}" style="magrin-bottom:20px"> Read More..</a>
+        <a href="{% url 'Blog:edit_blog' pk=blog.id %}" class="btn btn-sm btn-info" style="magrin-bottom:20px"> Edit</a>
         <h6>{{blog.liked_blog.count}} Likes | {{blog.blog_comment.count}} Comments</h6>
 
     </div>
 </div>
 <hr>
 
-{% endfor %}
-
+    {% endfor %}
 {% endblock  %}
